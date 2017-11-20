@@ -9,10 +9,6 @@
 @containerc: #0E2933;
 @highlightc: #FCFFF7;
 
-@trad: 128px;
-@tmargin: 15px;
-@edge: @trad * sin(2 * $PI / 3) / sin($PI / 6);
-@height: @edge * sin(2 * $PI / 3);
 
 .hidden {
   opacity: 0 !important;
@@ -23,8 +19,6 @@
        -o-animation: fadeout 1.3s !important; /* Opera < 12.1 */
           animation: fadeout 1.3s !important;
 }
-
-
 body {
   background: @backc;
 }
@@ -70,6 +64,9 @@ body {
   100% {text-shadow: -0.325em  0.25em 0.325em #fff;}
 }
 
+button {
+  cursor: pointer; /* clicky pointer */
+}
 
 /* =====
    INDEX
@@ -80,7 +77,7 @@ body {
   color: white;
 }
 .carousel-item {
-  min-height: 70vh;
+  min-height: 80vh;
   margin: 0px;
 }
 #myCarousel {
@@ -227,6 +224,22 @@ body {
        -o-animation: fadein 2s; /* Opera < 12.1 */
           animation: fadein 2s;
 }
+
+/* ==========
+   MORSE CODE
+   ========== */
+.thinbtn {
+  height: 2.5em; 
+}
+input {
+  height: 12em;
+  font-size: 2rem;
+}
+label {
+  margin-bottom: -25px;
+  padding-top: 5px;
+}
+
 @keyframes fadein {
   from {opacity: 0}
   to   {opacity: 1}
