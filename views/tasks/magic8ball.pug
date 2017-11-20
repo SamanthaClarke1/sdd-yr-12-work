@@ -1,3 +1,14 @@
 //- magic8ball.pug
 
+script(src="magic8ball.js")
 
+div.magic8ball.container.row.col-12
+  div.ball
+    div.ball-text-holder.haunted-text
+      div.ball-thinking-icon.fadeinout.hidden(style="display:none;")
+        i.fa.fa-spinner.fa-pulse.fa-3x.fa-fw
+        span.sr-only Loading...
+      div.ball-clickme-text
+        h4 Click Me!
+      div.ball-text-holder-inner
+        //- to be filled with code, see magic8ball.js my dude.

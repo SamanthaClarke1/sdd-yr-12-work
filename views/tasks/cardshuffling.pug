@@ -11,7 +11,7 @@ div.cardshuffling.container.row.col-12
       img.card-face(src="https://cdn.glitch.com/6779936d-f4d4-4617-a6e4-3c0cc2614ed2%2Fdeckofcards.png?1511146171925" style="width: 110%;")
   while n < 6 
     //- make (6) cards, labeled card-0 to card-5
-    div(class=`card col-2 card-${n}`) 
+    div(class=`card col-md-2 col-4 card-${n}`) 
       - n++
       figure.front
         //- by default, choose the jack of hearts.
