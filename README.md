@@ -1,1 +1,7 @@
-# sdd-yr-12-work
+Welcome to the Glitch BETA
+=========================
+
+Made by [Fog Creek](https://fogcreek.com/)
+-------------------
+
+\ ゜o゜)ノ
