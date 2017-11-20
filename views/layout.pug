@@ -1,0 +1,64 @@
+//- layout.pug
+
+html
+  head
+    title not an error
+    
+    //- bootstrap 4 links
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js" 
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" 
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous")
+    
+    link(href="https://fonts.googleapis.com/css?family=Lato", rel="stylesheet")
+    script(src="https://use.fontawesome.com/52160498ec.js")
+    
+    link(rel="stylesheet" href="less-css/style.css")
+    script(src="general.js")
+    
+    block additional-scripts
+    
+  body
+    
+    nav.navbar.navbar-toggleable-sm.navbar-inverse.bg-inverse
+    
+      //- Navbar toggle button
+      button.navbar-toggler.navbar-toggler-right(
+              type="button" 
+              data-toggle="collapse" data-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" aria-expanded="false" 
+              aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      
+      //- Navbar logo
+      a.navbar-brand(href="/")
+        img.img.img-responsive(
+             src="http://www.iconarchive.com/download/i94370/bokehlicia/captiva/rocket.ico" 
+             style="width: 48px; height: 48px;")
+      
+      //- Some other navbar shit; mostly
+      div.collapse.navbar-collapse#navbarSupportedContent
+        ul.navbar-nav.mr-auto.animated
+          li.nav-item
+            a.nav-link.gotohash(href="/#unitconversionc")
+              i.fa.fa-tachometer(aria-hidden="true")  Unit Conversion
+          li.nav-item
+            a.nav-link.gotohash(href="/#magic8ballc")
+              i.fa.fa-magic(aria-hidden="true")  Magic 8 Ball
+          li.nav-item
+            a.nav-link.gotohash(href="/#bottlesofbeerc")
+              i.fa.fa-beer(aria-hidden="true")  99 Bottles Of Beer
+          li.nav-item
+            a.nav-link.gotohash(href="/#morsecodec")
+              i.fa.fa-ellipsis-h(aria-hidden="true")  Morse Code
+          li.nav-item
+            a.nav-link.gotohash(href="/#cardshufflec")
+              i.fa.fa-clone(aria-hidden="true")  Card Shuffling
+              
+    div.container#index-body
+      block indexContent
+    

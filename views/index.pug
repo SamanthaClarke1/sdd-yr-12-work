@@ -1,0 +1,39 @@
+//- index.pug, extends layout.pug
+
+extends layout.pug
+
+block indexContent
+  div#myCarousel.carousel.slide(data-ride="carousel")
+    div.carousel-inner(role="listbox")
+      div.carousel-item.active.row.text-center.unitconversionc
+        h2.col-12 Unit Conversion
+        hr
+        include tasks/unitconversion.pug
+
+      div.carousel-item.row.text-center.magic8ballc
+        h2.col-12 Magic 8 Ball
+        hr
+        include tasks/magic8ball.pug
+            
+      div.carousel-item.row.text-center.bottlesofbeerc
+        h2.col-12 99 Bottles Of Beer (On the Wall)
+        hr
+        include tasks/bottlesofbeer.pug
+            
+      div.carousel-item.row.text-center.morsecodec
+        h2.col-12 Morse Code
+        hr
+        include tasks/morsecode.pug
+            
+      div.carousel-item.row.text-center.cardshufflec
+        h2.col-6 Card Shuffling
+        button.col-6.btn.btn-info#cards-shuffle(type="button") Shuffle The Cards
+        hr
+        include tasks/cardshuffling.pug
+
+    a.carousel-control-prev(href="#myCarousel", role="button", data-slide="prev")
+      span.carousel-control-prev-icon(aria-hidden="true")
+      span.sr-only Previous
+    a.carousel-control-next(href="#myCarousel", role="button", data-slide="next")
+      span.carousel-control-next-icon(aria-hidden="true")
+      span.sr-only Next

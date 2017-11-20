@@ -1,0 +1,20 @@
+//- cardshuffling.pug, links into index.pug
+
+//- initial links and declarations
+script(src="cardshuffling.js")
+
+- var n = 0;
+
+div.cardshuffling.container.row.col-12
+  //- deck of cards image
+    div(class='deck col-2')
+      img.card-face(src="https://cdn.glitch.com/6779936d-f4d4-4617-a6e4-3c0cc2614ed2%2Fdeckofcards.png?1511146171925" style="width: 110%;")
+  while n < 6 
+    //- make (6) cards, labeled card-0 to card-5
+    div(class=`card col-2 card-${n}`) 
+      - n++
+      figure.front
+        //- by default, choose the jack of hearts.
+        img.card-face(src="http://sinz.org/Michael.Sinz/cards/standard/Hearts/J.gif")
+      figure.back
+        img.card-face(src="http://sinz.org/Michael.Sinz/cards/standard/back.gif")
