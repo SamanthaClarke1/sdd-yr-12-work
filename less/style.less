@@ -17,11 +17,11 @@
 .hidden {
   opacity: 0 !important;
   /* fancy browser support ;) */
-  -webkit-animation: fadeout 2s !important; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadeout 2s !important; /* Firefox < 16 */
-      -ms-animation: fadeout 2s !important; /* Internet Explorer */
-       -o-animation: fadeout 2s !important; /* Opera < 12.1 */
-          animation: fadeout 2s !important;
+  -webkit-animation: fadeout 1.3s !important; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadeout 1.3s !important; /* Firefox < 16 */
+      -ms-animation: fadeout 1.3s !important; /* Internet Explorer */
+       -o-animation: fadeout 1.3s !important; /* Opera < 12.1 */
+          animation: fadeout 1.3s !important;
 }
 
 
@@ -54,7 +54,7 @@ body {
   animation: textGhostingAfter 3.5s ease-in infinite alternate;
 }
 @keyframes textGhostingAfter {
-  0%   {text-shadow: -0.25em -0.75em  0.75em  hsla(0, 0%, 100%, 0.5);}
+  0%   {text-shadow: -0.25em  0.75em -0.35em  hsla(0, 0%, 100%, 0.5);}
   50%  {text-shadow:  0      -0.625em 0.625em hsla(0, 0%, 100%, 0.25);}
   100% {text-shadow: -0.25em  0.25em  0.75em  hsla(0, 0%, 100%, 0.5);}
 }
