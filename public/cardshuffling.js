@@ -24,11 +24,11 @@ function shuffleDeck(deck) { // makes a new deck, shuffled from the existing dec
 }
 function shuffleCardsAnim() { // shuffles the cards with an animation
   deck = shuffleDeck(deck); // get new deck, for when they flip back up.
-  for(var i = 0; i < 5; i++) { // for each card
+  for(var i = 0; i < 6; i++) { // for each card
     var target = ".card-" + i; // get the cards individual class
-    setTimeout(flipCard, 200 * i, target); // flip that card after .2 seconds * the card number.
-    setTimeout(chooseNewCard, 200 * i + 1000, target); // choose a new image after 1s, when the face is down.
-    setTimeout(flipCard, 200 * i + 1400, target); // flip that card back up, after 1.4 s
+    setTimeout(flipCard, 130 * i, target); // flip that card after .2 seconds * the card number.
+    setTimeout(chooseNewCard, 130 * (7-i) + 900, target); // choose a new image after .9s, when the face is down.
+    setTimeout(flipCard, 130 * (7-i) + 1000, target); // flip the opposite card back up, after 1 s
   }
 }
 
@@ -43,19 +43,16 @@ function makeDeck() {
   console.log(ndeck);
   return ndeck;
 }
-function getRandomIndexOfArr(arr, del=false) {
-  var index = Math.floor(Math.random() * arr.length);
-  var item = arr[index];
-  if(del) arr.splice(index, 1); // if del was set to true, delete that index.
-  return {item: item, arr: arr};
-}
 
 $(document).ready(function() { // when the page is ready
+  shuffleCardsAnim(); // shuffle on load
+  
   $('.card').click(function(e) { // when the card is clicked
     e.preventDefault();
     flipCard(this); // flips this card
   });
   
   $("#cards-shuffle").click(function(e) { // when they click the card shuffle button
+    shuffleCardsAnim();
   });
 });

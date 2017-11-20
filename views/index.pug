@@ -6,29 +6,29 @@ block indexContent
   div#myCarousel.carousel.slide(data-ride="carousel")
     div.carousel-inner(role="listbox")
       div.carousel-item.active.row.text-center.unitconversionc
-        h2.col-12 Unit Conversion
-        hr
+        div.title-bar.col-12.row
+          h2.col-12 Unit Conversion
         include tasks/unitconversion.pug
 
       div.carousel-item.row.text-center.magic8ballc
-        h2.col-12 Magic 8 Ball
-        hr
+        div.title-bar.col-12.row
+          h2.col-12 Magic 8 Ball
         include tasks/magic8ball.pug
             
       div.carousel-item.row.text-center.bottlesofbeerc
-        h2.col-12 99 Bottles Of Beer (On the Wall)
-        hr
+        div.title-bar.col-12.row
+          h2.col-12 99 Bottles Of Beer (On the Wall)
         include tasks/bottlesofbeer.pug
             
       div.carousel-item.row.text-center.morsecodec
-        h2.col-12 Morse Code
-        hr
+        div.title-bar.col-12.row
+          h2.col-12 Morse Code
         include tasks/morsecode.pug
             
       div.carousel-item.row.text-center.cardshufflec
-        h2.col-6 Card Shuffling
-        button.col-6.btn.btn-info#cards-shuffle(type="button") Shuffle The Cards
-        hr
+        div.title-bar.col-12.row
+          h2.col-6 Card Shuffling
+          button.col-6.btn.btn-info#cards-shuffle(type="button") Shuffle The Cards
         include tasks/cardshuffling.pug
 
     a.carousel-control-prev(href="#myCarousel", role="button", data-slide="prev")

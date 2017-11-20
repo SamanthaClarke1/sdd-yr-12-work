@@ -9,12 +9,67 @@
 @containerc: #0E2933;
 @highlightc: #FCFFF7;
 
+@trad: 128px;
+@tmargin: 15px;
+@edge: @trad * sin(2 * $PI / 3) / sin($PI / 6);
+@height: @edge * sin(2 * $PI / 3);
+
+.hidden {
+  opacity: 0 !important;
+  /* fancy browser support ;) */
+  -webkit-animation: fadeout 2s !important; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadeout 2s !important; /* Firefox < 16 */
+      -ms-animation: fadeout 2s !important; /* Internet Explorer */
+       -o-animation: fadeout 2s !important; /* Opera < 12.1 */
+          animation: fadeout 2s !important;
+}
+
+
 body {
   background: @backc;
 }
 .container {
   background: @containerc;
 }
+
+.haunted-text {
+/*   color: #fff; */
+  font-family: emilys-candy, san-serif;
+  font-weight: 100;
+}
+
+/* Back layer */
+.haunted-text::before {
+  animation: textGhostingBefore 4.5s ease-out infinite alternate;
+}
+@keyframes textGhostingBefore {
+  0%   {text-shadow: -1.5em -1.5em  1.5em   hsla(0, 0%, 100%, 0.25);}
+  50%  {text-shadow:  1     -1.25em 1.125em hsla(0, 0%, 100%, 0.5);}
+  100% {text-shadow:  1.5em -1.5em  1.5em   hsla(0, 0%, 100%, 0.25);}
+}
+
+
+/* Middle layer */
+.haunted-text::after {
+  animation: textGhostingAfter 3.5s ease-in infinite alternate;
+}
+@keyframes textGhostingAfter {
+  0%   {text-shadow: -0.25em -0.75em  0.75em  hsla(0, 0%, 100%, 0.5);}
+  50%  {text-shadow:  0      -0.625em 0.625em hsla(0, 0%, 100%, 0.25);}
+  100% {text-shadow: -0.25em  0.25em  0.75em  hsla(0, 0%, 100%, 0.5);}
+}
+
+
+/* Front layer */
+.haunted-text {
+ animation: textGhosting 2s ease-in-out infinite alternate;
+}
+@keyframes textGhosting {
+  0%   {text-shadow:  0.325em -0.325em 0.325em #fff;}
+  50%  {text-shadow: -0.3      0.05    0.8em   #fff;}
+  100% {text-shadow: -0.325em  0.25em 0.325em #fff;}
+}
+
 
 /* =====
    INDEX
@@ -25,7 +80,7 @@ body {
   color: white;
 }
 .carousel-item {
-  min-height: 50vh;
+  min-height: 70vh;
   margin: 0px;
 }
 #myCarousel {
@@ -38,18 +93,21 @@ body {
 .carousel-control-next {
   margin-right: -100px;
 }
+.title-bar {
+  height: 7em;
+  margin: 0px;
+  margin-bottom: -100px;
+}
 
-
-/* =====
-   TASKS
-   ===== */
+/* |=====|
+   |TASKS|
+   |=====| */
 
 /* =====
    CARDS
    ===== */
 
-#cards-shuffle { /* options for the shuffle button */
-  height: 3em;
+#cards-shuffle { /* on hover, have the clicky cursor */
   cursor: pointer;
 }
 
@@ -58,6 +116,7 @@ body {
   height: 260px;
   position: relative;
   perspective: 800px;
+  margin: 0px;
 }
 
 .card-face { /* keep the card image fit to its box */
@@ -69,7 +128,7 @@ body {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d; /* lets it move in 3d */
-  transition: transform .7s;
+  transition: transform .65s;
   padding: 0px;
   background: rgba(0,0,0,0);
 }
@@ -93,4 +152,86 @@ body {
 
 .card.flipped {
   transform: rotateY( 180deg );
+}
+
+/* =====
+   8BALL 
+   ===== */
+
+.ball {
+  display: table;
+  border: 3px solid black;
+  margin: 0;
+  border-radius: 50%;
+  width: 60%;
+  height: 60%;
+  margin: auto;
+ 	background: radial-gradient(circle at 30% 80%, #EE7770 10%, #E00070 20%, #230ED5 40%, #041d5b 60%);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+  color: white;
+}
+.magic8ball {
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.ball-text-holder {
+  display: table-cell;
+  vertical-align: middle;
+}
+.fadeinout {
+  display: inline;
+  transition: all 1s ease-in-out;
+  /* fancy browser support ;) */
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+       -o-animation: fadein 2s; /* Opera < 12.1 */
+          animation: fadein 2s;
+}
+@keyframes fadein {
+  from {opacity: 0}
+  to   {opacity: 1}
+}
+@keyframes fadeout {
+  from {opacity: 1}
+  to   {opacity: 0}
 }
